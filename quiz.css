@@ -50,11 +50,11 @@ aside {
     padding-top: 10px;
     border-radius: 4px;
     background-color: rgba(0,0,0,0.5);
-    height: 375px;
+    height: 700px;
 }
 
 .playerColumn {
-    height: 200px;
+    height: 600px;
     opacity: 0.2;
     font-size: 100%;
     text-align: center;
@@ -122,6 +122,10 @@ aside {
 }
 .nameInput{
     max-width: 100%;
+}
+.statsArea{
+    font-size: 12px;
+    textalign: left;
 }
 
 
