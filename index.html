@@ -2,9 +2,209 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- html entities library -->
+    <script src="he.js"></script>
+
+    <!-- jQuery CDN -->
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="model.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Quizzical</title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="quiz.css" type="text/css">
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+    <script src="view.js"></script>
+
 </head>
 <body>
 
+    <div class="modal fade" id="hint" tabindex="-1" role="dialog">
+        <div class="modal-dialog hintStyle" role="document">
+            <div class="hint-content modal-content">
+                <div class="modal-header">
+                    <div id="hintTitle" class="modal-title">
+                        Test
+                    </div>
+                </div>
+                <div id="hintBody" class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="outerHintContent col-md-10">
+                                <div class="mainHintContent input-group form-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </span>
+                                    <input type="text" class="form-control" name="searchTerm" id="search" placeholder="Search Term">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <button id="searchButton" data-toggle="tooltip" type="button" data-placement="bottom" title="Use 2 points" class="btn btn-success">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="nextQuestion" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="nextTitle" class="modal-title">
+                        Choose the next question!
+                    </div>
+                </div>
+                <div id="nextQuestionBody" class="modal-body">
+                    <div class="container nextQuestionContainer">
+                        <div class="row">
+
+                            <div id="diff" class="col-md-12">
+                                <label class="radio-inline">
+                                    <input type="radio" name="difficultyLevel" id="easyDiff" value="easy">Easy (10 points)
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="difficultyLevel" id="mediumDiff" value="medium">Medium (20 points)
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="difficultyLevel" id="hardDiff" value="hard">Hard (30 points)
+                                </label>
+                            </div>
+
+                            <div class="col-md-12">
+                                <select class="form-control categoryOptionList">
+                                    <option hidden>Select a Category!</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3 col-md-offset-5">
+                                <button id="nextQuestionSubmit" type="button" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="setPlayers" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="setupTitle" class="modal-title">
+                        Enter Player Names
+                    </div>
+                </div>
+                <div id="setupBody" class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="outerSetupContent col-md-6">
+                                <div class="mainSetupContent input-group form-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </span>
+                                    <input type="text" class="form-control" name="username" id="username1" placeholder="Enter Player 1 Name Here">
+                                </div>
+                                <div class="mainSetupContent input-group form-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </span>
+                                    <input type="text" class="form-control" name="username" id="username2" placeholder="Enter Player 2 Name Here">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button id="setPlayerInfo" class="btn btn-success">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="col-md-5 col-md-offset-4">-->
+        <!--<img id="option1" src="images/proff.png" style="height: 100px">-->
+        <!--<img id="option2" src="images/super-simple-avatar-icon.jpg" style="height: 100px">-->
+        <!--<input type="text" class="form-control" name="setName" id="setName" placeholder="Player One Name">-->
+        <!--<button id="submitName" type="button" class="btn btn-success">Submit</button>-->
+    <!--</div>-->
+
+    <div id="mainScreen" class="container">
+        <div class="category">
+            <div id="catButtons" class="row">
+            </div>
+        </div>
+
+        <section class="column col-md-12">
+            <aside class="col-md-2 col-md-offset-1">
+
+                <!--<div class="panel panel-default row">-->
+                    <!--<div class="panel-heading">Status</div>-->
+                    <!--<p class="col-md-12">Current Turn: <span id="turn" class="label label-default">Player 1</span></p>-->
+                    <!--<p class="col-md-12"><span id="playerOneName">P1</span> Points: <span id="playerOnePoints" class="label label-default">0</span></p>-->
+                    <!--<p class="col-md-12"><span id="playerTwoName">P2</span> Points: <span id="playerTwoPoints" class="label label-default">0</span></p>-->
+                <!--</div>-->
+
+
+                <div class="column">
+                    <p class="col-md-12 panel panel-default currentTurn">Current Turn: <span id="turn" class="label label-default">Player 1</span></p>
+                    <div class="col-md-5">
+                        <div class="playerOneStatusBox panel panel-primary row playerColumn">
+                            <div class="panel-heading">Status</div>
+                            <p class="col-md-12"><span id="playerOneName">P1</span> Points: <span id="playerOnePoints" class="label label-default">0</span></p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-5 col-md-offset-2">
+                        <div class="playerTwoStatusBox panel panel-primary row playerColumn">
+                            <div class="panel-heading">Status</div>
+                            <p class="col-md-12"><span id="playerTwoName">P2</span> Points: <span id="playerTwoPoints" class="label label-default">0</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <article class=" col-md-7 col-md-offset-1 row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div id="questionBody" class="panel panel-info text-center">
+                        <div id="questionCategory" class="panel-heading">Category Here</div>
+                        <div id="question" class="panel-body">Question Here</div>
+                    </div>
+                </div>
+                <div id="answers" class="col-md-12 row">
+                    <div id="answer1" class="col-md-6"><div class="btn btn-default btn-block text-center"><span id="answer1Text">answer1</span></div></div>
+                    <div id="answer2" class="col-md-6"><div class="btn btn-default btn-block text-center"><span id="answer2Text">answer2</span></div></div>
+                    <div id="answer3" class="col-md-6"><div class="btn btn-default btn-block text-center"><span id="answer3Text">answer3</span></div></div>
+                    <div id="answer4" class="col-md-6"><div class="btn btn-default btn-block text-center"><span id="answer4Text">answer4</span></div></div>
+                </div>
+                <div id="help" class="col-md-9 col-md-offset-1 text-center row">
+                    <p class="label label-success col-md-8 col-md-offset-2 hintBox">Available hints:</p>
+                    <div class="row btn-group btn-group-lg" role="group">
+                        <button id="wiki" type="button" class="btn btn-default">Wikipedia  <i class="fa fa-wikipedia-w" aria-hidden="true"></i></button>
+                        <button id="youtube" type="button" class="btn btn-default">YouTube  <i class="fa fa-youtube" aria-hidden="true"></i></button>
+                        <button id="twitter" type="button" class="btn btn-default">Twitter  <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
 </body>
 </html>
