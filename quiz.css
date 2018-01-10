@@ -124,7 +124,6 @@ aside {
 }
 
 .playerColumn {
-    height: 200px;
     opacity: 0.2;
     font-size: 100%;
     text-align: center;
@@ -212,7 +211,7 @@ aside {
     }
     .playerOneStatusBox, .playerTwoStatusBox{
         padding-top: 10px;
-        display: none;
+        /*display: none;*/
     }
     .toggle{
         top: 14px;
@@ -227,7 +226,6 @@ aside {
     }
     .currentTurn{
         text-align: center;
-        display: none;
     }
     #info, .reset{
         margin: 5px;
@@ -259,4 +257,4 @@ aside {
 
 }
 
-@media screen and (max-width: )
+/*@media screen and (max-width: )*/

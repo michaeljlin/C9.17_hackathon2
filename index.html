@@ -240,23 +240,24 @@
             </div>
         </div>
     </div>
-    <div class='currentTurn'>
-        <h3 class="col-md-12 panel panel-default visible-xs">Current Turn: <span id="turn" class="label label-default">Player 1</span></h3>
-    </div>
-    <article class="col-xs-12 visible-xs">
-        <div class="col-xs-5">
-            <div class="playerOneStatusBox panel panel-primary row playerColumn">
-                <!-- <div class="panel-heading">Status</div> -->
-                <p class="col-md-12"><span id="playerOneName">P1</span> Points: <span id="playerOnePoints" class="playerLabel label label-default">0</span></p>
-            </div>
-        </div>
-        <div class="col-xs-5 col-md-offset-2 col-xs-offset-2">
-                <div class="playerTwoStatusBox panel panel-primary row playerColumn">
-                    <!-- <div class="panel-heading">Status</div> -->
-                    <p class="col-md-12"><span id="playerTwoName">P2</span> Points: <span id="playerTwoPoints" class="playerLabel label label-default">0</span></p>
-                </div>
-            </div>
-    </article>
+
+    <!--<div class='currentTurn'>-->
+        <!--<h3 class="col-md-12 panel panel-default visible-xs">Current Turn: <span class="turn label label-default">Player 1</span></h3>-->
+    <!--</div>-->
+    <!--<article class="col-xs-12 visible-xs">-->
+        <!--<div class="col-xs-5">-->
+            <!--<div class="playerOneStatusBox panel panel-primary row playerColumn">-->
+                <!--&lt;!&ndash; <div class="panel-heading">Status</div> &ndash;&gt;-->
+                <!--<p class="col-md-12"><span class="playerOneName">P1</span> Points: <span class="playerOnePoints playerLabel label label-default">0</span></p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-xs-5 col-md-offset-2 col-xs-offset-2">-->
+                <!--<div class="playerTwoStatusBox panel panel-primary row playerColumn">-->
+                    <!--&lt;!&ndash; <div class="panel-heading">Status</div> &ndash;&gt;-->
+                    <!--<p class="col-md-12"><span class="playerTwoName">P2</span> Points: <span class="playerTwoPoints playerLabel label label-default">0</span></p>-->
+                <!--</div>-->
+            <!--</div>-->
+    <!--</article>-->
 
     <div id="mainScreen" class="container">
         <div class="category">
@@ -267,27 +268,27 @@
 <!-- Main Game Area -->
         <section class="column col-md-12">
             <!-- Player and Stats Box -->
-            <aside class="col-md-3 col-lg-3 col-xs-3 col-md-offset-1 hidden-xs">
+            <aside class="col-xs-12 col-md-3 col-lg-3 col-md-offset-1">
                 <div class="column col-md-12 col-xs-12">
-                    <p class="col-md-12 panel panel-default currentTurn">Current Turn: <span id="turn" class="label label-default">Player 1</span></p>
+                    <p class="col-md-12 panel panel-default currentTurn">Current Turn: <span class="turn label label-default">Player 1</span></p>
                     <div class="col-md-5 col-xs-5">
                         <div class="playerOneStatusBox panel panel-primary row playerColumn">
-                            <div class="panel-heading">Status</div>
-                            <p class="col-md-12"><span id="playerOneName">P1</span> Points: <div id="playerOnePoints" class="playerLabel label label-default">0</div></p>
+                            <div class="hidden-xs hidden-sm panel-heading">Status</div>
+                            <p class="col-md-12"><span class="playerOneName">P1</span> Points: <div class="playerOnePoints playerLabel label label-default">0</div></p>
                         </div>
                     </div>
                     <div class="col-md-5 col-xs-5 col-md-offset-2 col-xs-offset-2">
                         <div class="playerTwoStatusBox panel panel-primary row playerColumn">
-                            <div class="panel-heading">Status</div>
-                            <p class="col-md-12"><span id="playerTwoName">P2</span> Points: <div id="playerTwoPoints" class="playerLabel label label-default">0</div></p>
+                            <div class="hidden-xs hidden-sm panel-heading">Status</div>
+                            <p class="col-md-12"><span class="playerTwoName">P2</span> Points: <div class="playerTwoPoints playerLabel label label-default">0</div></p>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="hidden-xs hidden-sm col-md-6 col-md-offset-3">
                         <span class="sound">Sound: </span> <label class="toggle"><input id="sound-toggle" type="checkbox"><span class="slider round"></span></label>
                     </div>
 
-                    <div class="col-lg-12 statsButtons">
+                    <div class="hidden-xs hidden-sm col-lg-12 statsButtons">
                         <button id="info" class="btn btn-info">Instructions</button>
                         <button class="btn btn-danger reset">Reset</button>
                     </div>
