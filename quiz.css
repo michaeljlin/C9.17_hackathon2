@@ -80,6 +80,8 @@ input:checked + .slider:before{
 
 .sound{
     color: white;
+    position: relative;
+    bottom: 16px;
 }
 
 #answer1, #answer2, #answer3, #answer4{
@@ -204,6 +206,10 @@ aside {
 }
 .statsButtons{
     padding: 0px;
+    text-align: center;
+}
+.soundContainer{
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -238,9 +244,7 @@ aside {
     #answers{
         margin-left: 1px;
     }
-    .playerOneStatusBox > div {
-        padding: 0px;
-    }
+
 
 
 }
@@ -259,4 +263,17 @@ aside {
 
 }
 
-@media screen and (max-width: )
+@media screen and (min-width: 760px) and (max-width: 980px){
+    .playerOneStatusBox > div:nth-child(1) {
+        padding: 0px;
+    }
+    .playerTwoStatusBox > div:nth-child(1) {
+        padding: 0px;
+    }
+    .playerOneStatusBox > p, .playerTwoStatusBox > p {
+        padding: 0px;
+    }
+    .sound {
+        bottom: 16px;
+    }
+}
