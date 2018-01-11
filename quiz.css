@@ -5,7 +5,7 @@
 }
 
 #question{
-    height: 5em;
+    /* height: 5em; */
     font-weight: 500;
     font-size: 16px;
 }
@@ -197,7 +197,7 @@ aside {
 .nameInput{
     max-width: 100%;
 }
-#turn{
+#turn, #turn-mobile{
     padding-bottom: 1px;
 }
 #winMessage{
@@ -209,6 +209,12 @@ aside {
     text-align: center;
 }
 .soundContainer{
+    text-align: center;
+}
+#answer1,#answer2,#answer3,#answer4 {
+    padding: 2px;
+}
+.answerIcon{
     text-align: center;
 }
 
@@ -246,6 +252,10 @@ aside {
     #answers{
         margin-left: 1px;
     }
+    #help{
+        margin-left: 14%;
+    }
+
 
 
 
@@ -274,6 +284,10 @@ aside {
     }
     .sound {
         bottom: 16px;
+    }
+
+    .playerOnePoints, .playerTwoPoints {
+        margin-left: 3px;
     }
 }
 

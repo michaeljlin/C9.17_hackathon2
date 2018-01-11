@@ -241,23 +241,25 @@
         </div>
     </div>
 
-    <!--<div class='currentTurn'>-->
-        <!--<h3 class="col-md-12 panel panel-default visible-xs">Current Turn: <span class="turn label label-default">Player 1</span></h3>-->
-    <!--</div>-->
-    <!--<article class="col-xs-12 visible-xs">-->
-        <!--<div class="col-xs-5">-->
-            <!--<div class="playerOneStatusBox panel panel-primary row playerColumn">-->
-                <!--&lt;!&ndash; <div class="panel-heading">Status</div> &ndash;&gt;-->
-                <!--<p class="col-md-12"><span class="playerOneName">P1</span> Points: <span class="playerOnePoints playerLabel label label-default">0</span></p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-xs-5 col-md-offset-2 col-xs-offset-2">-->
-                <!--<div class="playerTwoStatusBox panel panel-primary row playerColumn">-->
-                    <!--&lt;!&ndash; <div class="panel-heading">Status</div> &ndash;&gt;-->
-                    <!--<p class="col-md-12"><span class="playerTwoName">P2</span> Points: <span class="playerTwoPoints playerLabel label label-default">0</span></p>-->
-                <!--</div>-->
-            <!--</div>-->
-    <!--</article>-->
+    <!-- Show only on mobile - stats box and current turn -->
+    <div class='currentTurn'>
+        <h3 class="col-md-12 panel panel-default visible-xs">Current Turn: <span id="turn-mobile" class="label label-default">Player 1</span></h3>
+    </div>
+    <article class="col-xs-12 visible-xs">
+        <div class="col-xs-5">
+            <div class="playerOneStatusBox panel panel-primary row playerColumn">
+                <!-- <div class="panel-heading">Status</div> -->
+                <p class="col-md-12"><span id="playerOneName-mobile">P1</span> Points: <span id="playerOnePoints-mobile" class="playerLabel label label-default">0</span></p>
+            </div>
+        </div>
+        <div class="col-xs-5 col-md-offset-2 col-xs-offset-2">
+                <div class="playerTwoStatusBox panel panel-primary row playerColumn">
+                    <!-- <div class="panel-heading">Status</div> -->
+                    <p class="col-md-12"><span id="playerTwoName-mobile">P2</span> Points: <span id="playerTwoPoints-mobile" class="playerLabel label label-default">0</span></p>
+                </div>
+            </div>
+    </article>
+
 
     <div id="mainScreen" class="container">
         <div class="category">
@@ -304,11 +306,13 @@
                         <div id="question" class="panel-body">Question Here</div>
                     </div>
                 </div>
-                <div id="answers" class="col-md-12 col-sm-10 col-xs-12 col-sm-offset-1 col-md-offset-0 row">
-                    <div id="answer1" class="col-md-6 col-xs-6"><div class="btn btn-default btn-block text-center"><span id="answer1Text">answer1</span></div></div>
-                    <div id="answer2" class="col-md-6 col-xs-6"><div class="btn btn-default btn-block text-center"><span id="answer2Text">answer2</span></div></div>
-                    <div id="answer3" class="col-md-6 col-xs-6"><div class="btn btn-default btn-block text-center"><span id="answer3Text">answer3</span></div></div>
-                    <div id="answer4" class="col-md-6 col-xs-6"><div class="btn btn-default btn-block text-center"><span id="answer4Text">answer4</span></div></div>
+
+                <div id="answers" class="col-md-12 col-sm-8 col-xs-12 col-sm-offset-1 col-md-offset-0 row">
+                    <div id="answer1" class="col-md-6 col-xs-12"><div class="btn btn-default btn-block text-center"><span id="answer1Text">answer1</span></div></div>
+                    <div id="answer2" class="col-md-6 col-xs-12"><div class="btn btn-default btn-block text-center"><span id="answer2Text">answer2</span></div></div>
+                    <div id="answer3" class="col-md-6 col-xs-12"><div class="btn btn-default btn-block text-center"><span id="answer3Text">answer3</span></div></div>
+                    <div id="answer4" class="col-md-6 col-xs-12"><div class="btn btn-default btn-block text-center"><span id="answer4Text">answer4</span></div></div>
+
                 </div>
                 <div id="help" class="col-md-9 col-sm-10 col-xs-9 col-md-offset-1 col-xs-offset-1 text-center row">
                     <p class="label label-success col-md-8 col-sm-8 col-xs-12 col-md-offset-2 col-sm-offset-2 hintBox">Available hints:</p>
