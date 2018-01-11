@@ -214,13 +214,13 @@ function Game(){
         var answerElementHolder = new $('<div>').text('The correct answer was: ').append(answerElement).addClass('answerIcon answerText col-md-12');
 
         if(result === 'correct'){
-            resultIconElement.addClass('answerIcon col-md-1 col-md-offset-5 glyphicon glyphicon-ok').css({
+            resultIconElement.addClass('answerIcon col-md-1 col-md-offset-5 col-xs-12 glyphicon glyphicon-ok').css({
                 'font-size':'70px',
                 'color': 'green'
             });
         }
         else{
-            resultIconElement.addClass('answerIcon col-md-1 col-md-offset-5 glyphicon glyphicon-remove').css({
+            resultIconElement.addClass('answerIcon col-md-1 col-md-offset-5 col-xs-12 glyphicon glyphicon-remove').css({
                 'font-size':'70px',
                 'color': 'red'
             });
@@ -399,8 +399,10 @@ function Game(){
      *   @returns: {undefined} none
      */
     this.displayPlayerNameAndAvatars = function(player1Name, player2Name){
+
         $('#playerOneName,#playerOneName-mobile').text(player1Name);
         $('#playerTwoName,#playerTwoName-mobile').text(player2Name);
+
         if($('#setPlayers').hasClass('in')){
             $('#setPlayers').modal('toggle');
         };
@@ -416,9 +418,11 @@ function Game(){
      *   @returns: {undefined} none
      */
     this.updateStatus = function(turn, player1Points, player2Points){
+
         $('#turn,#turn-mobile').text('Player '+turn);
         $('#playerOnePoints,#playerOnePoints-mobile').text(player1Points);
         $('#playerTwoPoints,#playerTwoPoints-mobile').text(player2Points);
+
     };
 
     /*******************************************************************************************************************
@@ -644,10 +648,12 @@ function Game(){
         model.reset();
         $('#mainScreen').toggle('hidden');
         self.getStart();
+
         $('#playerOnePoints,#playerOnePoints-mobile').text(controller.playerOnePoint);
         $('#playerTwoPoints,#playerTwoPoints-mobile').text(controller.playerTwoPoint);
         self.setActivePlayerStatus(controller.playerTurn);
         $('#turn,#turn-mobile').text('Player 1');
+
     };
 
 }
