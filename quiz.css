@@ -1,7 +1,7 @@
 #mainScreen{
     width: 100%;
-    margin-top: 10vh;
     display: none;
+    margin-top: 5vh;
 }
 
 #question{
@@ -134,6 +134,7 @@ aside {
 
 .currentTurn{
     font-size: 16px;
+    text-align: center;
 }
 .hintBox{
     height: 30px;
@@ -211,6 +212,12 @@ aside {
     text-align: center;
 }
 
+@media screen and (min-width: 992px){
+    #mainScreen{
+        margin-top: 10vh;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .playerColumn{
         height: 50px;
@@ -229,9 +236,6 @@ aside {
         right: -60px;
         bottom: 9px;
         /* margin: 5px */
-    }
-    .currentTurn{
-        text-align: center;
     }
     #info, .reset{
         margin: 5px;
@@ -254,9 +258,6 @@ aside {
     .playerLabel{
         position: relative;
         top: 2px;
-    }
-    #mainScreen{
-        margin-top: 17vh;
     }
 
 }
